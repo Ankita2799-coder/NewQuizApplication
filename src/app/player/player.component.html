@@ -1,0 +1,105 @@
+<div class="container" *ngIf="!submit"> 
+    <div class="row text-center" *ngIf="filteredQuestions.length>0">
+        <div class="my-3">
+            progress timer
+        </div>
+        <div class="example-container col-md-12 mt-3">
+            <div class="container-fluid">
+                <div *ngFor="let question of filteredQuestions;let i=index">
+                    
+                    <h2> Q {{pager.index+1}} {{question.content}}</h2>
+                    {{question.givenAnswer}}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                            <input type="radio" [value]="question.option1" [name]="''+i" [(ngModel)]="question.givenAnswer">{{question.option1}}
+                        </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><input type="radio" [value]="question.option2" [name]="''+i"  [(ngModel)]="question.givenAnswer" >{{question.option2}}
+                        </p>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                            <input type="radio" [value]="question.option3" [name]="''+i"  [(ngModel)]="question.givenAnswer" >{{question.option3}}
+                        </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                            <input type="radio" [value]="question.option4" [name]="''+i"  [(ngModel)]="question.givenAnswer" >{{question.option4}}
+                        </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="d-flex flex-column">
+                <div class="TheOuterClass" (click)="goTo(pager.index - 1);">
+                    <h2 class="h7 cursor-pointer TheInnerClass" (click)="goTo(pager.index - 1);" style="font-size: 300px;"><</h2>
+                    <button mat-button class="mt-10 TheInnerClass"style="width: 150px;" (click)="goTo(pager.index - 1);">Previous Question</button>
+                </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-outline-success mb-4" style="width: 80px; height: 80px;"
+                    *ngIf="pager.index+1==pager.count" (click)="submitAnswers()">Submit Answers</button>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="TheOuterClass" (click)="goTo(pager.index +1);">
+                    <h2 class="h7 cursor-pointer TheInnerClass"  (click)="goTo(pager.index + 1);" style="font-size: 300px;">></h2>
+                    <button mat-button style="width: 150px;"  class="mt-10 TheInnerClass" (click)="goTo(pager.index + 1);">Next Question</button>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="filteredQuestions.length<=0">
+        <h2>Sorry no questions in quiz</h2>
+    </div>
+</div>
+<div class="container" *ngIf="submit">
+    
+    <div class="row text-center">
+    <div class="text-center mt-4" *ngIf="correctAnswers!=0">
+       <h2 class="text-success border ">you answered {{correctAnswers}} questions correctly</h2>
+    </div>
+        <h2 style="font-size:36px;" class="mt-4">
+        Well done please enter your details so that we can let you know if you are one of our hundered winners
+      </h2>
+      <div class="example-container">
+        <mat-form-field appearance="outline" class="w-50">
+          <mat-label>Username</mat-label>
+          <input matInput [formControl]="username" required>
+        </mat-form-field>
+      </div>
+      <div class="example-container">
+  
+        <mat-form-field appearance="outline" class="w-50">
+          <mat-label>UoB email </mat-label>
+          <input matInput [formControl]="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="example-container ">
+        <mat-form-field appearance="outline" class="w-50">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="example-container">
+        <mat-form-field appearance="outline" class="w-50">
+          <mat-label>Tell us how we can improve the experience</mat-label>
+          <input matInput [formControl]="feedback" required>
+        </mat-form-field>
+      </div>
+      <div>
+  
+        <button type="button" class="btn green m-3" (click)="submitDetails()">Submit</button>
+      </div>
+    </div>
+  </div>

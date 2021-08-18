@@ -1,0 +1,11 @@
+.btn
+{
+    border-radius: 18px;
+    width: 270px;
+}
+.green
+{
+    background-color: rgb(68,176,81);
+    color: white;
+    font-size: 25px;
+}

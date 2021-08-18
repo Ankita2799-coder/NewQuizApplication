@@ -1,0 +1,14 @@
+<!-- 
+<div class="d-flex justify-content-end">
+<button type="button" class="btn color" style="width: 250px;height: 40px">Play</button>
+<button type="button" class="btn btn-primary" style="width: 250px;height: 40px;" >How it works</button>
+<button type="button" class="btn btn-primary" style="width: 250px;height: 40px">Log in</button>
+</div>
+  </mat-toolbar> -->
+  
+<mat-toolbar class="d-flex flex-row-reverse bd-highlight borderbtm bg-white ">
+       <div ><button type="button" class="btn blue right" style="width: 250px;height: 50px" routerLink="/login" *ngIf="!userLogin" >Log in</button></div>
+       <div ><button type="button" class="btn blue " style="width: 250px;height: 50px" *ngIf="userLogin" (click)="logOut()">Logout</button></div>
+       <div ><button type="button" class="btn blue" style="width: 250px;height: 50px;" routerLink="/working">How it works</button></div>
+       <div ><button type="button" class="btn color " style="width: 250px;height: 50px"routerLink="/user-dashboard">Play</button></div>
+  </mat-toolbar>

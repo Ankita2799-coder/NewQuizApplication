@@ -1,0 +1,16 @@
+.blue
+{
+    background-color: rgb(68,114,196);
+    color:white;
+}
+.mt20
+{
+    margin-top: 5px;
+    
+}
+.btn-mat
+{
+    margin-left: 20px;
+    background-color: rgb(68,114,196);
+    color:white;
+}

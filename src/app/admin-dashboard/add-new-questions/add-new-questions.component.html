@@ -1,0 +1,72 @@
+<div class="bootstrap-wrapper">
+    <div class="row mt20">
+        <div class="col-md-12">
+            <h1>
+                Adding Questions to Quiz
+            </h1>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-subtitle>
+                        Enter the detail of the new question.
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <form>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Write Question Content</mat-label>
+                            <textarea matInput placeholder="Enter Here" [formControl]="content"></textarea>
+                        </mat-form-field>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field>
+                                    <mat-label>
+                                        Enter Option 1
+                                    </mat-label>
+                                    <input type="text" matInput [formControl]="option1">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field>
+                                    <mat-label>
+                                        Enter Option 2
+                                    </mat-label>
+                                    <input type="text" matInput [formControl]="option2">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field>
+                                    <mat-label>
+                                        Enter Option 3
+                                    </mat-label>
+                                    <input type="text" matInput [formControl]="option3">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field>
+                                    <mat-label>
+                                        Enter Option 4
+                                    </mat-label>
+                                    <input type="text" matInput [formControl]="option4">
+                                </mat-form-field>
+                            </div>
+                        </div>                        
+                        <mat-form-field>
+                                <mat-label>
+                                    Correct Answer
+                                </mat-label>
+                                <input type="text" matInput [formControl]="answer">
+                            </mat-form-field>
+                        <div class="container text-center mt20">
+                            <div>
+                                <button mat-raised-button (click)="addQuestion()">Add</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
