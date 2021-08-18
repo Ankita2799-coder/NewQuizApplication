@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row text-center">
+    <h1 style="font-size:36px;" class="mt-4">
+      Login
+    </h1>
+    <div class="example-container">
+      <mat-form-field appearance="outline" class="w-50">
+        <mat-label>Username </mat-label>
+        <input matInput [formControl]="username" required>
+        <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="example-container ">
+      <mat-form-field appearance="outline" class="w-50">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div>
+
+      <button type="button" class="btn green m-3" (click)="onLogin()">Submit</button>
+    </div>
+    <h3>Don't have an account?</h3>
+    <a routerLink="/signup" style="color: black;">Register Here</a>
+  </div>
+</div>

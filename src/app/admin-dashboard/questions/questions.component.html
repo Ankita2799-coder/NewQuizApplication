@@ -1,0 +1,64 @@
+<h2 class="mt20">
+    Add Questions to {{qtitle}}
+</h2>
+<div class="bootstrap-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container text-center mb-3 ">
+                <button mat-raised-button class="blue" [routerLink]="'/admin/add-questions/' + qid + '/' +qtitle ">Add
+                    Questions</button>
+            </div>
+            <mat-card *ngFor="let quest of questions ; let i=index">
+                <mat-card-content>
+                    <p>
+                        Q-{{i+1}}
+                        <span>
+                            {{quest.content}}
+                        </span>
+                    </p>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>
+                                    1) {{quest.option1}}
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>
+                                    2) {{quest.option2}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>
+                                    3) {{quest.option3}}
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>
+                                    4) {{quest.option4}}
+                                </p>
+                            </div>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <p class="mt20">
+                            <b>
+                                Correct Answer:
+                            </b>
+                            {{quest.answer}}
+                        </p>
+
+                    </div>
+
+                </mat-card-content>
+                <mat-dialog-actions>
+                    <button class="btn-mat" mat-raised-button (click)="onDeleteQuestion(quest.quesId)">
+                        Delete
+                    </button>
+                </mat-dialog-actions>
+                <mat-divider></mat-divider>
+            </mat-card>
+        </div>
+    </div>
+</div>

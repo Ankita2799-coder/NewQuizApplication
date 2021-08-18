@@ -1,0 +1,12 @@
+<mat-card>
+
+    <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Edit Home Text</mat-label>
+        <textarea matInput placeholder="Add Text" rows="5" [(ngModel)]="homeText"></textarea>
+    </mat-form-field>
+    <div class="text-center">
+
+        <button mat-raised-button class="blue" (click)="onAddText()" >Update</button>
+    </div>
+
+</mat-card>

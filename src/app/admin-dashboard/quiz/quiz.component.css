@@ -1,0 +1,20 @@
+.mt10
+{
+    margin-top: 10px !important;
+}
+
+  
+  .example-header-image {
+    background-image: url('src/assets/images/answer.png');
+    background-size: cover;
+  }
+  .ml20
+  {
+      margin-left: 20px;
+      color:rgb(87, 138, 226);;
+  }
+  .qcolor
+  {
+    background-color:rgb(87, 138, 226);
+    color:white
+  }

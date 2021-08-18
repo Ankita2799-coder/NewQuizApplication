@@ -1,0 +1,28 @@
+.marginTop
+{
+    margin-top: 150px;
+    
+}
+.btn
+{
+    border-radius: 8px;
+    width: 270px;
+}
+.blue
+{
+    background-color: rgb(68,114,196);
+    color: white;
+    font-size: 25px;
+}
+.yellow
+{
+    background-color: rgb(255,193,57);
+    color: white;
+    font-size: 25px;
+}
+.green
+{
+    background-color: rgb(68,176,81);
+    color: white;
+    font-size: 25px;
+}

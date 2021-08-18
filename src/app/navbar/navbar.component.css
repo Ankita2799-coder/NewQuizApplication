@@ -1,0 +1,29 @@
+.color
+{
+    background-color: rgb(68,176,81);
+    color: white;
+    font-size: 18px;
+}
+.right
+{
+    margin-right: 80px;
+}
+.borderbtm
+{
+    border-bottom: 2px solid rgb(176, 176, 204);
+    
+}
+.blue
+{
+  background-color: rgb(68,114,196);
+  color: white;
+  font-size: 18px;
+}
+.btn
+{
+    border-radius: 0px;
+    border: 1px solid grey;
+}
+.mat-toolbar-row, .mat-toolbar-single-row {
+    height: 87px;
+}
